@@ -1,20 +1,13 @@
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate")
 
-var userLength;
-var userUpperChar;
-var userLowerChar;
-var userNumbChar;
-var userSpecialChar;
-var userChoice;
-
+userChoice;
 
 var wordLength = ['userLowerCase', 'userUpperCase', 'userNumbChar', 'userSpecialChar'];
-LowerChars = 'abcdefghijklmnopqrstuvwxyz';
-UpperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-NumChars = '0123456789';
-SpecialChars = '!@#$%^&*()_-+=';
+userLowerChar = 'abcdefghijklmnopqrstuvwxyz';
+userUpperChar = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+userNumChars = '0123456789';
+userSpecialChar = '!@#$%^&*()_-+=';
 
 generateBtn.addEventListener('click', writePassword)
 
@@ -34,53 +27,33 @@ function generatePassword() {
       }
       else if (!userLength) {
           return;
-        }
+      }
       else {
         userLowerChar = confirm('Would you like to include lowercase characters?');
+          if (userLowerChar = true) {
+            userChoice += userLowerChar
+          };
         userUpperChar = confirm('Would you like to add uppercase characters?');
+        if (userUpperChar = true) {
+          userChoice += userUpperChar
+        };
         userNumbChar = confirm('Would you like to include number characters?');
+        if (userNumbChar =true) {
+          userChoice += userNumbChar
+        };
         userSpecialChar = confirm('Would you like to add any special characters? (!@+, etc.)');
-      }
+        if (LowerChars = true) {
+          userChoice += userSpecialChar
+        };
         if (userLowerChar === false && userUpperChar === false && userNumbChar === false && userSpecialChar === false) {
         alert ('You must select at least one type of character');
-          return;
-        }
+        }};
 
+  }
 
+        function writePassword() {
+          var password = generatePassword();
+          var passwordText = document.querySelector("#password");
+          passwordText.value = password;
 
       }
-
-/*var userLower = confirm('Would you like to include lowercase characters?');
-    if (userLower === true){
-      wordChars += userLength;
-    }
-  var userUpper = confirm('Would you like to add uppercase characters?');
-    if (userUpper === true){
-      wordChars += userUpper;
-    }
-  var userNumbers = confirm('Would you like to include number characters?');
-    if (userNumbers === true){
-      wordChars += userNumbers;
-    }
-  var userSpecial = confirm('Would you like to add uppercase characters?');
-    if (userSpecial === true){
-      wordChars += userSpecial;
-    }
-  if (userLower === false && userUpper === false && userNumbers === false && userSpecial === false) {
-    alert ('You must select at least one type of character');
-      return;
-  }
-  return;
-  
-}
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-
-}
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword)
-writePassword();*/
